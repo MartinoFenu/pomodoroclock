@@ -1,0 +1,223 @@
+.light, .light .Modal, .light a, .light .ClockFace {
+  background-color: #DEE4E7;
+  color: #000000;
+  stroke: #000000;
+}
+.dark, .dark .Modal, .dark a, .dark .ClockFace {
+  background-color: #212121;
+  color: #DEE4E7;
+  stroke: #DEE4E7;
+}
+.dark .Btn, .dark select, .dark select option {
+  background-color: #343a40;
+  border-color: #343a40;
+  color: #ffffff
+}
+.light .Btn, .light select, .light select option {
+  background-color: #CFD8DC;
+  border-color: #CFD8DC;
+  color: #212529;
+}
+.light .activeLoop, .dark .activeLoop { color: #aa422f; }
+.clickable {
+  cursor: pointer;
+  text-decoration: underline;
+  padding: 0 0.3em;
+  box-sizing: border-box;
+}
+.clickable:hover, a:hover {
+  color: #dc2a2a;
+}
+select {
+  -webkit-appearance: none;
+   -moz-appearance: none;
+   appearance: none;
+   position: relative;
+   padding: 0.2em 1.3em 0.1em 0.5em;
+   background-image:
+    linear-gradient(45deg, transparent 50%, gray 50%),
+    linear-gradient(135deg, gray 50%, transparent 50%);
+  background-position:
+    calc(100% - 11px) calc(0.8em + 1px),
+    calc(100% - 7px) calc(0.8em + 1px);
+  background-size:
+    5px 5px,
+    5px 5px,
+    1px 1.5em;
+  background-repeat: no-repeat;
+  border: none;
+  line-height: 1.5em;
+}
+.App {
+  width: 100%;
+  height: 100%;
+  min-height: 100vh;
+  position: relative;
+}
+.appContainer {
+  max-width: 600px;
+  text-align: center;
+  margin: 0 auto;
+  padding: 4em 0;
+}
+.Btn, .Input, input, select {
+  font-size: 1em;
+  font-weight: 700;
+}
+.Btn, button {
+  cursor: pointer;
+  padding: 0.15em 0.9em;
+  border: 1px solid transparent;
+  border-radius: 0.25em;
+  margin: 0 0.2em
+}
+h4 {
+  font-size: 1.25em;
+  margin: 0.7em 0;
+}
+input[type="number"] {
+  text-align: center;
+  -webkit-appearance: textfield;
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+}
+.marks {
+  transform: translate(25px, 25px);
+  stroke-width: 0.2;
+}
+.OptionsBox {
+  padding: 1em 0;
+  max-width: 10em;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 0 auto;
+}
+.Timers {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: row;
+}
+.Timers > div { margin: 0 0.5em;}
+.Timers input { max-width: 3em; }
+.ClockFace {
+  max-width: 500px;
+  fill: none;
+  stroke-width: 1;
+  stroke-linecap: round;
+}
+.ProgressCircle {
+  fill: none;
+  stroke-width: 3;
+  stroke-linecap: round;
+  animation: progress 1s ease-out forwards;
+  stroke: orange;
+}
+.OuterCircle {
+  fill: none;
+  stroke: #000;
+  stroke-width: 1;
+}
+.redTimer {
+  color: #FF0000;
+  stroke: #FF0000;
+}
+text {
+  font-weight: 100;
+  font-size: 0.5em;
+  font-family: 'Open Sans', sans-serif;
+}
+@keyframes progress {
+  0% {
+    stroke-dasharray: 0 130;
+  }
+}
+.ClockTimer {
+  fill: #666;
+  font-size: 0.5em;
+  text-anchor: middle;
+}
+.TimerLabel { font-size: 0.5em;}
+.Modal {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  min-height: 300px;
+  max-width: 300px;
+  width: 100%;
+  z-index: 110;
+  padding: 1em;
+  border: 1px solid #ccc;
+  box-shadow: 1px 1px 1px black;
+  box-sizing: border-box;
+  transition: all 0.3s ease-out;
+}
+.Modal.privacy {min-height: 50vh;}
+.ModalContent {
+  overflow-y: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 1.5em;
+  box-sizing: border-box;
+}
+.closed { display: none; }
+.ModalClose {
+  position: absolute;
+  top: 0;
+  right: 0.5em;
+  z-index: 500;
+  font-size: 1.5em
+}
+
+.Backdrop {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: 100;
+  left: 0;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.Settings .Input {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 1em 0;
+}
+.creditsContainer, .privacyContainer { text-align: left; }
+.creditsContainer {
+  line-height: 1.3em;
+  min-height: 250px;
+}
+.creditsContainer span {
+  display: block;
+  margin: 0.2em 0;
+}
+footer {
+  width: 100%;
+  text-align: center;
+  position: absolute;
+  bottom: 0.5em;
+  padding-top: 1em;
+}
+.cookieBanner {
+    width: 100%;
+    position: absolute;
+    top: 0.2em;
+    text-align: center;
+}
+
+@media (max-width: 330px) {
+  .Timers {
+    flex-flow: column;
+  }
+}
