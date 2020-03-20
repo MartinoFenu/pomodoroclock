@@ -13,7 +13,7 @@ const Footer = () => {
   }
   return (
     <footer>
-      <span>Made with fun by <a href="www.martinofenu.it"> Martino Fenu</a> | </span>
+      <span>Made with fun by <a href="https://www.martinofenu.it"> Martino Fenu</a> | </span>
       <span
         id='credits'
         className='clickable' onClick={handleFooterLinks} >
